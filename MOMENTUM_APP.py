@@ -4,10 +4,8 @@ import pandas as pd
 import datetime as dt
 from MOMENTR import *  
 
-all_m_ret = pd.read_csv(r"C:\Users\User\Desktop\GLADIO\MOMENTUM APP\all_monthly_returns.csv", index_col=0, parse_dates=True)
-all_m_ret.index = pd.to_datetime(all_m_ret.index)
-all_w_ret = pd.read_csv(r"C:\Users\User\Desktop\GLADIO\MOMENTUM APP\all_weekly_returns.csv", index_col=0, parse_dates=True)
-all_w_ret.index = pd.to_datetime(all_w_ret.index)
+all_m_ret = pd.read_csv("all_monthly_returns.csv", index_col=0, parse_dates=True)
+all_w_ret = pd.read_csv("all_weekly_returns.csv", index_col=0, parse_dates=True)
 
 benchmark_ticker = st.sidebar.text_input("Enter Benchmark Ticker", value="SPY")
 risk_free_ticker = st.sidebar.text_input("Enter Risk-Free Ticker", value="BIL")
