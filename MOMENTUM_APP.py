@@ -14,7 +14,7 @@ risk_free_ticker = st.sidebar.text_input("Enter Risk-Free Ticker", value="BIL")
 def load_benchmark_and_rf(benchmark_ticker, risk_free_ticker):
     benchmark = yf.download(benchmark_ticker,auto_adjust=False, period = 'max',start='2010-01-01')[['Adj Close']]
     benchmark.columns = ["Benchmark"]
-    risk_free = yf.download(risk_free_ticker, auto_adjust=Falseperiod = 'max',start='2010-01-01')[['Adj Close']]
+    risk_free = yf.download(risk_free_ticker, auto_adjust=False,period = 'max',start='2010-01-01')[['Adj Close']]
     risk_free.columns = ["Risk Free Return"]
     benchmark_m = benchmark.pct_change().resample('ME').apply(lambda x: (x + 1).prod() - 1).dropna()
     benchmark_w = benchmark.pct_change().resample('W').apply(lambda x: (x + 1).prod() - 1).dropna()
