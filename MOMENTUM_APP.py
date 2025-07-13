@@ -25,13 +25,14 @@ def load_benchmark_and_rf(benchmark_ticker, risk_free_ticker):
 benchmark_m, benchmark_w, risk_free_m, risk_free_w = load_benchmark_and_rf(benchmark_ticker, risk_free_ticker)
 
 st.title("Momentum Filter Backtest")
-st.write("Choose between simple-, double-, and triple momentum filters for the stock universe of the S&P 500, Dow Jones, and NASDAQ, since 2010")
-st.write("The Lookback Period indicates over what time frame(s) you want to assess a stock's momentum")
-st.write("The Top Count selects how many stocks you want to pick from the stock universe.")
-st.write("The Holding Length specifies how long you want to hold the stocks. The default is one period.")
-st.write("A simple filter picks the number of best-performing stocks over the lookback period you specify (default: the 10 best stocks over 12 periods)")
-st.write("A dual filter picks among those stocks for another Lookback Period you specify, and a triple filter further picks the best over a third Lookback Period.")
-st.write("Be careful: this strategy has very high turnover, which leads to substantial trading- and tax costs, which are not considered.")
+st.write("Choose between simple, double, and triple momentum filters for the stock universe of the S&P 500, Dow Jones, and NASDAQ, starting from 2010.")
+st.write("The Lookback Period indicates the time frame(s) over which you want to assess a stock's momentum.")
+st.write("The Top Count determines how many stocks you want to select from the universe.")
+st.write("The Holding Length specifies how long you want to hold the selected stocks. The default is one period.")
+st.write("A simple filter selects the top-performing stocks over the lookback period you specify (default: the 10 best stocks over 12 periods).")
+st.write("A double filter applies a second lookback period to further refine the selection, and a triple filter adds a third.")
+st.write("Note: This strategy involves very high turnover, which can lead to substantial trading and tax costs. These costs are not considered in the backtest.")
+
 
 
 st.sidebar.header("Backtest Parameters")
